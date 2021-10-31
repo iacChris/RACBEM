@@ -2,9 +2,21 @@
 
 This is a python module implementing RACBEM using IBM's Qiskit. It can used in various quantum linear algebra problems.
 
+## Getting Started (Oct. 2021)
 
+Because **IBM Qiskit** has experienced significant updates and archarchitectural changes since the original repo was published, we had difficulties running the demo following the original installing instructions. Thanks to Flynn's efforts, we successfully identified the suitable version of `qiskit` to be `0.16.0`. To avoid the similar painful experience in the future, we prepared the updated instructions down below, assuming that you already have `conda` installed.
 
-## Dependencies and Installing Instruction
+1. `conda create --name=$ENV_NAME python=3.7`
+
+2. `conda activate $ENV_NAME`
+
+3. `pip install -r requirements.txt`
+
+4. `python .\main_test.py`
+
+*Note: we suppressed the annoying `DeprecationWarning` in `main_test.py`*
+
+## Dependencies and Installing Instruction (Original)
 
 + Pyhton3.7, IBM Qiskit, QuTiP, numpy, scipy
 

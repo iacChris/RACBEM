@@ -33,6 +33,9 @@ from racbem import *
 import os
 import pickle
 
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+
 def GetBackend(backend_name=None):
     if backend_name == None:
         backend = Aer.get_backend('qasm_simulator')
@@ -74,7 +77,7 @@ if __name__ == '__main__':
             noise_model = NoiseModel.from_dict(noise_backend['noise_dict'])
             coupling_map = noise_backend['coupling_map']
             tot_q_device = noise_backend['tot_q_device']
-            print("load architecture locally at: %s_backend_config.pkl\n"%(backend_name))
+            print("\nload architecture locally at: %s_backend_config.pkl\n"%(backend_name))
         else:
             raise Exception("no locally saved architecture: %s_backend_config.pkl"%(backend_name), load_architecture)
     else:
