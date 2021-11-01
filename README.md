@@ -6,6 +6,8 @@ This is a python module implementing RACBEM using IBM's Qiskit. It can used in v
 
 Because **IBM Qiskit** has experienced significant updates and archarchitectural changes since the original repo was published, we had difficulties running the demo following the original installing instructions. Thanks to Flynn's efforts, we successfully identified the suitable version of `qiskit` to be `0.16.0`. To avoid the similar painful experience in the future, we prepared the updated instructions down below, assuming that you already have `conda` installed.
 
+#### RACBEM Demo
+
 1. `conda create --name=$ENV_NAME python=3.7`
 
 2. `conda activate $ENV_NAME`
@@ -15,6 +17,17 @@ Because **IBM Qiskit** has experienced significant updates and archarchitectural
 4. `python .\main_test.py`
 
 *Note: we suppressed the annoying `DeprecationWarning` in `main_test.py`*
+
+#### QSPPACK Demo
+
+To run this demo, make sure you have MATLAB and Julia installed. After installing Julia, [install IJulia](https://julialang.github.io/IJulia.jl/stable/manual/installation/#Installing-IJulia) to make it work with Jupyter Notebook. Specifically, you need to run the following commands in Julia terminal.
+
+```bash
+julia> using Pkg
+julia> Pkg.add("IJulia")
+```
+
+---
 
 ## Dependencies and Installing Instruction (Original)
 
