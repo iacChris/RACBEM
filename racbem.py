@@ -185,7 +185,7 @@ class BlockEncoding(object):
         self.qregs = QuantumRegister(self.n_tot_qubit, 'q')
 
 
-    def build_random_circuit(self, n_depth, coupling_map=None, basis_gates=None, prob_one_q_op=0.5):
+    def build_random_circuit(self, n_depth, coupling_map=None, basis_gates=None, prob_one_q_op=0.5, seed=0):
         """Build a random circuit as the block-encoding U_A.
         Args:
             n_depth (int):                      the number of the layers of operations
@@ -199,7 +199,7 @@ class BlockEncoding(object):
         if hasattr(self, 'qc'):
             self.qc.data.clear()
         self.qc = random_circuit(self.n_tot_qubit, n_depth,
-                coupling_map=coupling_map, basis_gates=basis_gates, prob_one_q_op=prob_one_q_op)
+                coupling_map=coupling_map, basis_gates=basis_gates, prob_one_q_op=prob_one_q_op, seed=seed)
         self.qc.name = 'UA  '
 
     def build_dag(self):

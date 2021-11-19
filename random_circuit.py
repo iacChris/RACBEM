@@ -122,7 +122,7 @@ def random_circuit(n_qubits, depth, coupling_map=None, basis_gates=None, prob_on
 
     if seed is None:
         seed = np.random.randint(0, np.iinfo(np.int32).max)
-    rng = np.random.RandomState(seed)
+    rng = np.random.RandomState(0)
 
     for _ in range(depth):
         remaining_qubits = coupling_map.physical_qubits
